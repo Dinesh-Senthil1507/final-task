@@ -1,21 +1,19 @@
-
-
     function registerUser() {
-    try {
-    const name = prompt("Enter your name:");
-    const email = prompt("Enter your email:");
-    const age = parseInt(prompt("Enter your age:"));
-    if (!name || !email || isNaN(age)) {
-    throw new Error("All fields must be filled correctly.");
-    }
-    if (age < 12) {
-    throw new Error("You must be at least 18 years old to register.");
-    }
-    return { name, email, age };
-    } catch (err) {
-    alert("Error: " + err.message);
-    return null; 
-    }
+     try{
+      const name = prompt("Enter your name:");
+      const email = prompt("Enter your email:");
+      const age = Number(prompt("Enter your age:"));
+      if (!name || !email || !age) {
+      throw new Error("All fields must be filled correctly.");
+      }
+      if (age < 12) {
+      throw new Error("You must be at least 12 years old to register.");
+      }
+      return { name, email, age };
+      } catch(err){
+        Error.innertext=alert("Error"+err.message);
+        return null;
+      }
     }
 
     const questions = [
